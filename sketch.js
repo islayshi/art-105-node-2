@@ -35,7 +35,6 @@ function draw() {
   button.position(5, 655);
   button.style('background-color', color(84, 135, 255));
   button.style('font-size', '20px');
-  button.style('color', color(255));
   button.mousePressed(changeEmail);
 
   /*-- ALL THE TEXT IN THE SKETCH -- */
@@ -56,6 +55,7 @@ function draw() {
   text(spamEmails[randomEmail], 20, 180, 600, 600);
 }
 
+//Randomizer function
 function changeEmail() {
   randomEmail = int(random(spamEmails.length));
 }
