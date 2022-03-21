@@ -3,6 +3,8 @@ let spamEmails = ["Subject: naturally irresistible your corporate identity  lt i
 
 let randomEmail = "dasdasdasdasdasdasdsa";
 
+let button;
+
 function setup() {
   createCanvas(700, 700);
 }
@@ -16,11 +18,19 @@ function draw() {
   rect(0, 0, 700, 40);
 
   // send "button"
-  fill(color(84, 135, 255));
+  /*fill(color(84, 135, 255));
   rect(5, 655, 100, 40, 5);
   textSize(20);
   fill(255);
-  text('Send', 30, 680);
+  text('Send', 30, 680);*/
+
+  //Actual button with functionality
+  button = createButton('Send');
+  button.position(5, 655);
+  button.style('background-color', color(84, 135, 255));
+  button.style('font-size', '20px');
+  button.style('color', color(255));
+  button.mousePressed(changeEmail);
 
   //text
   fill(color(255));
@@ -28,15 +38,17 @@ function draw() {
   text('Spam Email Randomizer', 15, 26);
   fill(color(184, 192, 194));
   text('To: This is a spam email randomizer', 15, 75);
-  text('Subject: Click anywhere for a random spam email!', 15, 120);
+  text('Subject: Click the button for a random spam email!', 15, 120);
 
   // email body (randomizer here)
   fill(color(39, 40, 51));
   textSize(15);
   text(spamEmails[randomEmail], 20, 180, 600, 600);
 
+
+
 }
 
-function mousePressed() {
+function changeEmail() {
   randomEmail = int(random(spamEmails.length));
 }
