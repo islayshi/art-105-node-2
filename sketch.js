@@ -4,9 +4,15 @@ let spamEmails = ["Subject: naturally irresistible your corporate identity  lt i
 let randomEmail = "dasdasdasdasdasdasdsa";
 
 let button;
+let myFont;
 
+function preload() {
+  //Load custom font
+  myFont = loadFont('SalmaPro.otf');
+}
 function setup() {
   createCanvas(700, 700);
+
 }
 
 function draw() {
@@ -32,10 +38,14 @@ function draw() {
   button.style('color', color(255));
   button.mousePressed(changeEmail);
 
-  //text
+  /*-- ALL THE TEXT IN THE SKETCH -- */
+  //Custom font
+  textFont(myFont);
+  //Header
   fill(color(255));
-
   text('Spam Email Randomizer', 15, 26);
+
+  //To and Subject
   fill(color(184, 192, 194));
   text('To: This is a spam email randomizer', 15, 75);
   text('Subject: Click the button for a random spam email!', 15, 120);
@@ -44,9 +54,6 @@ function draw() {
   fill(color(39, 40, 51));
   textSize(15);
   text(spamEmails[randomEmail], 20, 180, 600, 600);
-
-
-
 }
 
 function changeEmail() {
