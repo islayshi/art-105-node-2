@@ -18,6 +18,8 @@ function setup() {
 function draw() {
   background(255);
 
+  textSize(20);
+
   //Header bar
   noStroke();
   fill(color(75, 76, 84));
