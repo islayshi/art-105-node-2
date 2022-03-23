@@ -5,16 +5,22 @@ let randomEmail = "dasdasdasdasdasdasdsa";
 
 let button;
 let myFont;
+let trashImg;
+let forwardImg;
 
 function preload() {
   //Load custom font
   myFont = loadFont('SalmaPro.otf');
+  //Load images
+  trashImg = loadImage('trashicon.png');
+  forwardImg = loadImage('forward.png');
+  exitImg = loadImage('whitecross.png');
 }
 
 function setup() {
   createCanvas(700, 700);
 
-  //Actual button with functionality
+  //Randomizer button
   button = select('#randButton');
   button.position(880, 655);
   button.mousePressed(changeEmail);
@@ -23,12 +29,11 @@ function setup() {
 }
 
 function draw() {
+  //Canvas background and defaults
   background(45, 46, 51);
   fill(255);
   rect(2, 2, 696, 696);
-
   fill(color(0, 0, 0));
-
   textSize(20);
 
   //Header bar
@@ -52,6 +57,17 @@ function draw() {
   fill(color(39, 40, 51));
   textSize(15);
   text(spamEmails[randomEmail], 20, 180, 600, 600);
+
+  //Image icons
+  image(trashImg, 660, 650, 25, 25);
+  image(forwardImg, 620, 653, 25, 25);
+  image(exitImg, 670, 10, 18, 18);
+
+  // Line divisions
+  stroke(100);
+  line(0, 90, 700, 90);
+  line(0, 140, 700, 140);
+
 }
 
 //Randomizer function
