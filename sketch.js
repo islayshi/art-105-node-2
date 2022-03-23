@@ -10,13 +10,24 @@ function preload() {
   //Load custom font
   myFont = loadFont('SalmaPro.otf');
 }
+
 function setup() {
   createCanvas(700, 700);
+
+  //Actual button with functionality
+  button = select('#randButton');
+  button.position(880, 655);
+  button.mousePressed(changeEmail);
+  button.class("randomizerButton");
 
 }
 
 function draw() {
-  background(255);
+  background(45, 46, 51);
+  fill(255);
+  rect(2, 2, 696, 696);
+
+  fill(color(0, 0, 0));
 
   textSize(20);
 
@@ -24,20 +35,6 @@ function draw() {
   noStroke();
   fill(color(75, 76, 84));
   rect(0, 0, 700, 40);
-
-  // send "button"
-  /*fill(color(84, 135, 255));
-  rect(5, 655, 100, 40, 5);
-  textSize(20);
-  fill(255);
-  text('Send', 30, 680);*/
-
-  //Actual button with functionality
-  button = createButton('Send');
-  button.position(5, 655);
-  button.style('background-color', color(84, 135, 255));
-  button.style('font-size', '20px');
-  button.mousePressed(changeEmail);
 
   /*-- ALL THE TEXT IN THE SKETCH -- */
   //Custom font
